@@ -6,10 +6,8 @@ import java.util.List;
 
 /**
  * Represents a bank account.
- * 
  * @author <a href="mailto:mwilson@acme.com">Mark Wilson</a>
  */
-
 
 public class Account {
 
