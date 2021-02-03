@@ -74,5 +74,4 @@ jobs:
       - uses: github/codeql-action/upload-sarif@v1
         with:
       #    sarif_file: jtest-demo/target/jtest/report.sarif
-      #     sarif_file: jtest-demo/build/reports/jtest/report.sarif
-           sarif_file: /home/modtest/report_ranges.sarif
+          sarif_file: jtest-demo/build/reports/jtest/report.sarif
