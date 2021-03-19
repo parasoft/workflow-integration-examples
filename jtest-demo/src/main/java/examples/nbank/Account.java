@@ -6,9 +6,9 @@ import java.util.List;
 
 /**
  * Represents a bank account.
+ * 
  * @author <a href="mailto:mwilson@acme.com">Mark Wilson</a>
  */
-
 public class Account {
 
     public static final String STATUS_SILVER = "silver";
@@ -70,7 +70,7 @@ public class Account {
         _balance = balance;
         if (balance < BALANCE_GOLD_MIN) {
             _accountStatus = STATUS_SILVER;
-        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) {
+        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) { // parasoft-suppress BD.PB.CC "sarif"
             _accountStatus = STATUS_GOLD;
         } else {
             _accountStatus = STATUS_PLATINUM;
