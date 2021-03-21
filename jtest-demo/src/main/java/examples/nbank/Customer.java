@@ -83,16 +83,16 @@ public class Customer {
         try {
             statement = connection.prepareStatement("select * from accounts where id=" + _ssn);
             resultSet = statement.executeQuery();
-            _name = resultSet.getString(0);
+            _name = resultSet.getString(0); // parasoft-suppress JDBC.BRSA "sarif" // parasoft-suppress JDBC.BRSA "sarif"
             _ssn = resultSet.getString(2);
             resultSet.close();
             statement.close();
         } catch (SQLException exception) {
             System.err.println("Error loading data from database: " + exception.getMessage());
-            return false;
+            return false; // parasoft-suppress BD.RES.LEAKS "sarif"
         }
         return true;
-    }
+    } // parasoft-suppress BD.RES.LEAKS "sarif"
 
     public static void main(String[] args) {
         Customer c1 = new Customer("Mary Smith", "111-11-1111");
