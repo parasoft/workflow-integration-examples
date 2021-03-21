@@ -70,7 +70,7 @@ public class Account {
         _balance = balance;
         if (balance < BALANCE_GOLD_MIN) {
             _accountStatus = STATUS_SILVER;
-        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) { // parasoft-suppress BD.PB.CC "sarif"
+        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) {
             _accountStatus = STATUS_GOLD;
         } else {
             _accountStatus = STATUS_PLATINUM;
