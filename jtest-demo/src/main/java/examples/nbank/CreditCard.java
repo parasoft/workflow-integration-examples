@@ -101,7 +101,7 @@ public class CreditCard {
      *             id
      */
     public void makePayment(Account account) throws IllegalArgumentException {
-        if (account.getID() != _customerId) // parasoft-suppress PB.CUB.UEIC "ak"
+        if (account.getID() != _customerId)
             throw new IllegalArgumentException("Wrong customer id");
         account.apply(new DepositTransaction(_currentBalance));
         _currentBalance = 0;
