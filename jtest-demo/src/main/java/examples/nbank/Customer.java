@@ -83,7 +83,7 @@ public class Customer {
         try {
             statement = connection.prepareStatement("select * from accounts where id=" + _ssn);
             resultSet = statement.executeQuery();
-            _name = resultSet.getString(0);
+            _name = resultSet.getString(0); // parasoft-suppress JDBC.BRSA "sarif" // parasoft-suppress JDBC.BRSA "sarif" // parasoft-suppress JDBC.BRSA "ak"
             _ssn = resultSet.getString(2);
             resultSet.close();
             statement.close();
@@ -92,7 +92,7 @@ public class Customer {
             return false;
         }
         return true;
-    }
+    } // parasoft-suppress BD.RES.LEAKS "sarif" // parasoft-suppress BD.RES.LEAKS "ak"
 
     public static void main(String[] args) {
         Customer c1 = new Customer("Mary Smith", "111-11-1111");
