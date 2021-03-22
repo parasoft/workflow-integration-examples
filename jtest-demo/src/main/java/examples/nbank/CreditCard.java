@@ -10,9 +10,6 @@ package examples.nbank;
  */
 public class CreditCard {
 
-    
-    
-    
     public static final int[] SSN_DIGITS = new int[] { 3, 2, 4 };
 
     public static final int[] ZIP_DIGITS = new int[] { 5 };
@@ -104,7 +101,7 @@ public class CreditCard {
      *             id
      */
     public void makePayment(Account account) throws IllegalArgumentException {
-        if (account.getID() != _customerId)
+        if (account.getID() != _customerId) // parasoft-suppress PB.CUB.UEIC "ak"
             throw new IllegalArgumentException("Wrong customer id");
         account.apply(new DepositTransaction(_currentBalance));
         _currentBalance = 0;
