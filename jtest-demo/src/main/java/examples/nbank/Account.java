@@ -33,7 +33,7 @@ public class Account {
     private String setAccountStatus(int balance) {
         if (balance < BALANCE_GOLD_MIN) {
             return STATUS_SILVER;
-        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) {
+        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) { // parasoft-suppress BD.PB.CC "ak"
             return STATUS_GOLD;
         } else {
             return STATUS_PLATINUM;
@@ -70,7 +70,7 @@ public class Account {
         _balance = balance;
         if (balance < BALANCE_GOLD_MIN) {
             _accountStatus = STATUS_SILVER;
-        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) {
+        } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) { // parasoft-suppress BD.PB.CC "ak"
             _accountStatus = STATUS_GOLD;
         } else {
             _accountStatus = STATUS_PLATINUM;
