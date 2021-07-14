@@ -1,0 +1,1339 @@
+{
+	"$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+	"version": "2.1.0",
+	"runs": [
+		{
+			"tool": {
+				"driver": {
+					"name": "Jtest",
+					"semanticVersion": "2021.1.0",
+					"rules": [
+						{
+							"id": "BD.PB.CC",
+							"name": "Avoid conditions that always evaluate to the same value",
+							"shortDescription": {
+								"text": "Avoid conditions that always evaluate to the same value"
+							},
+							"fullDescription": {
+								"text": "Avoid conditions that always evaluate to the same value [BD.PB.CC]"
+							},
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"help": {
+								"text": "Avoid conditions that always evaluate to the same value [BD.PB.CC]"
+							},
+							"properties": {
+								"tags": [
+									"Flow Analysis",
+									"Possible Bugs"
+								]
+							}
+						},
+						{
+							"id": "BD.RES.LEAKS",
+							"name": "Ensure resources are deallocated",
+							"shortDescription": {
+								"text": "Ensure resources are deallocated"
+							},
+							"fullDescription": {
+								"text": "Ensure resources are deallocated [BD.RES.LEAKS]"
+							},
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"help": {
+								"text": "Ensure resources are deallocated [BD.RES.LEAKS]"
+							},
+							"properties": {
+								"tags": [
+									"Flow Analysis",
+									"Resources"
+								]
+							}
+						},
+						{
+							"id": "CDD.DUPM",
+							"name": "Avoid method duplication",
+							"shortDescription": {
+								"text": "Avoid method duplication"
+							},
+							"fullDescription": {
+								"text": "Avoid method duplication [CDD.DUPM]"
+							},
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"help": {
+								"text": "Avoid method duplication [CDD.DUPM]"
+							},
+							"properties": {
+								"tags": [
+									"Code Duplication Detection"
+								]
+							}
+						},
+						{
+							"id": "JDBC.BRSA",
+							"name": "Ensure index is valid in JDBC method invocation",
+							"shortDescription": {
+								"text": "Ensure index is valid in JDBC method invocation"
+							},
+							"fullDescription": {
+								"text": "Ensure index is valid in JDBC method invocation [JDBC.BRSA]"
+							},
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"help": {
+								"text": "Ensure index is valid in JDBC method invocation [JDBC.BRSA]"
+							},
+							"properties": {
+								"tags": [
+									"Java Database Connectivity"
+								]
+							}
+						},
+						{
+							"id": "PB.CUB.UEIC",
+							"name": "Do not use '==' or '!=' to compare objects",
+							"shortDescription": {
+								"text": "Do not use '==' or '!=' to compare objects"
+							},
+							"fullDescription": {
+								"text": "Do not use '==' or '!=' to compare objects [PB.CUB.UEIC]"
+							},
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"help": {
+								"text": "Do not use '==' or '!=' to compare objects [PB.CUB.UEIC]"
+							},
+							"properties": {
+								"tags": [
+									"Possible Bugs",
+									"Confusing or Unintended Behavior"
+								]
+							}
+						},
+						{
+							"id": "UC.AURCO",
+							"name": "Avoid collection objects that are never read",
+							"shortDescription": {
+								"text": "Avoid collection objects that are never read"
+							},
+							"fullDescription": {
+								"text": "Avoid collection objects that are never read [UC.AURCO]"
+							},
+							"defaultConfiguration": {
+								"level": "warning"
+							},
+							"help": {
+								"text": "Avoid collection objects that are never read [UC.AURCO]"
+							},
+							"properties": {
+								"tags": [
+									"Unused Code"
+								]
+							}
+						}
+					]
+				}
+			},
+			"results": [
+				{
+					"ruleId": "BD.PB.CC",
+					"level": "error",
+					"message": {
+						"text": "Condition \"balance >= 5000\" always evaluates to true",
+						"markdown": "**\\[Line 36\\] Condition \"balance >= 5000\" always evaluates to true**  \n  \n**Start of the path**  \nAccount.java&nbsp;(33)&nbsp;:&nbsp;setAccountStatus\\(int balance\\)  \nAccount.java&nbsp;(34)&nbsp;:&nbsp;if \\(balance < BALANCE\\_GOLD\\_MIN\\) \\{&nbsp;&nbsp;_\\*\\*\\*&nbsp;Condition evaluation: \\(balance < 5000\\) \\(assuming false\\)_  \n**Point where senseless condition is used**&nbsp;  \nAccount.java&nbsp;(36)&nbsp;:&nbsp;\\(balance >= BALANCE\\_GOLD\\_MIN\\)"
+					},
+					"partialFingerprints": {
+						"lineHash": "729855832"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+								},
+								"region": {
+									"startLine": 36,
+									"startColumn": 20,
+									"endColumn": 49
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+													},
+													"region": {
+														"startLine": 33,
+														"startColumn": 20,
+														"endColumn": 50
+													}
+												},
+												"message": {
+													"text": "Violation Cause - Start of the path"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+													},
+													"region": {
+														"startLine": 34,
+														"startColumn": 9,
+														"endColumn": 42
+													}
+												},
+												"message": {
+													"text": "  *** Condition evaluation: (balance < 5000) (assuming false)"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+													},
+													"region": {
+														"startLine": 36,
+														"startColumn": 20,
+														"endColumn": 49
+													}
+												},
+												"message": {
+													"text": "Violation Point - Point where senseless condition is used"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ruleId": "BD.PB.CC",
+					"level": "error",
+					"message": {
+						"text": "Condition \"balance >= 5000\" always evaluates to true",
+						"markdown": "**\\[Line 73\\] Condition \"balance >= 5000\" always evaluates to true**  \n  \n**Start of the path**  \nAccount.java&nbsp;(69)&nbsp;:&nbsp;setBalance\\(int balance\\)  \nAccount.java&nbsp;(70)&nbsp;:&nbsp;\\_balance = balance;  \nAccount.java&nbsp;(71)&nbsp;:&nbsp;if \\(balance < BALANCE\\_GOLD\\_MIN\\) \\{&nbsp;&nbsp;_\\*\\*\\*&nbsp;Condition evaluation: \\(balance < 5000\\) \\(assuming false\\)_  \n**Point where senseless condition is used**&nbsp;  \nAccount.java&nbsp;(73)&nbsp;:&nbsp;\\(balance >= BALANCE\\_GOLD\\_MIN\\)"
+					},
+					"partialFingerprints": {
+						"lineHash": "729855832"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+								},
+								"region": {
+									"startLine": 73,
+									"startColumn": 20,
+									"endColumn": 49
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+													},
+													"region": {
+														"startLine": 69,
+														"startColumn": 17,
+														"endColumn": 41
+													}
+												},
+												"message": {
+													"text": "Violation Cause - Start of the path"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+													},
+													"region": {
+														"startLine": 70,
+														"startColumn": 9,
+														"endColumn": 28
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+													},
+													"region": {
+														"startLine": 71,
+														"startColumn": 9,
+														"endColumn": 42
+													}
+												},
+												"message": {
+													"text": "  *** Condition evaluation: (balance < 5000) (assuming false)"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+													},
+													"region": {
+														"startLine": 73,
+														"startColumn": 20,
+														"endColumn": 49
+													}
+												},
+												"message": {
+													"text": "Violation Point - Point where senseless condition is used"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ruleId": "UC.AURCO",
+					"level": "warning",
+					"message": {
+						"text": "'List' field '_accountsLog' is never read",
+						"markdown": "**\\[Line 116\\] 'List' field '\\_accountsLog' is never read**"
+					},
+					"partialFingerprints": {
+						"lineHash": "2040230778"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Account.java"
+								},
+								"region": {
+									"startLine": 116,
+									"startColumn": 25,
+									"endColumn": 37
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "PB.CUB.UEIC",
+					"level": "error",
+					"message": {
+						"text": "\"!=\" is used when comparing 'String' Objects. 'equals()' should be used instead",
+						"markdown": "**\\[Line 104\\] \"\\!=\" is used when comparing 'String' Objects\\. 'equals\\(\\)' should be used instead**"
+					},
+					"partialFingerprints": {
+						"lineHash": "1821395361"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/CreditCard.java"
+								},
+								"region": {
+									"startLine": 104,
+									"startColumn": 13,
+									"endColumn": 43
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "CDD.DUPM",
+					"level": "error",
+					"message": {
+						"text": "Duplicated method: \"public boolean isOverdrawnDuplicate(int b ...\"",
+						"markdown": "**\\[Line 33\\] Duplicated method: \"public boolean isOverdrawnDuplicate\\(int b \\.\\.\\.\"**  \n  \nReview duplicate in:&nbsp;AccountDuplicate.java&nbsp;(33)  \nReview duplicate in:&nbsp;AccountDuplicate.java&nbsp;(97)"
+					},
+					"partialFingerprints": {
+						"lineHash": "1619003004"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+								},
+								"region": {
+									"startLine": 33,
+									"startColumn": 2,
+									"endLine": 52,
+									"endColumn": 5
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 33,
+														"startColumn": 2,
+														"endLine": 52,
+														"endColumn": 5
+													}
+												},
+												"message": {
+													"text": "Review duplicate in"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 97,
+														"startColumn": 5,
+														"endLine": 116,
+														"endColumn": 5
+													}
+												},
+												"message": {
+													"text": "Review duplicate in"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ruleId": "BD.PB.CC",
+					"level": "error",
+					"message": {
+						"text": "Condition \"balance >= 5000\" always evaluates to true",
+						"markdown": "**\\[Line 57\\] Condition \"balance >= 5000\" always evaluates to true**  \n  \n**Start of the path**  \nAccountDuplicate.java&nbsp;(54)&nbsp;:&nbsp;setAccountStatus\\(int balance\\)  \nAccountDuplicate.java&nbsp;(55)&nbsp;:&nbsp;if \\(balance < BALANCE\\_GOLD\\_MIN\\) \\{&nbsp;&nbsp;_\\*\\*\\*&nbsp;Condition evaluation: \\(balance < 5000\\) \\(assuming false\\)_  \n**Point where senseless condition is used**&nbsp;  \nAccountDuplicate.java&nbsp;(57)&nbsp;:&nbsp;\\(balance >= BALANCE\\_GOLD\\_MIN\\)"
+					},
+					"partialFingerprints": {
+						"lineHash": "729855832"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+								},
+								"region": {
+									"startLine": 57,
+									"startColumn": 20,
+									"endColumn": 49
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 54,
+														"startColumn": 20,
+														"endColumn": 50
+													}
+												},
+												"message": {
+													"text": "Violation Cause - Start of the path"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 55,
+														"startColumn": 9,
+														"endColumn": 42
+													}
+												},
+												"message": {
+													"text": "  *** Condition evaluation: (balance < 5000) (assuming false)"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 57,
+														"startColumn": 20,
+														"endColumn": 49
+													}
+												},
+												"message": {
+													"text": "Violation Point - Point where senseless condition is used"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					],
+					"suppressions": [
+						{
+							"kind": "external"
+						}
+					]
+				},
+				{
+					"ruleId": "BD.PB.CC",
+					"level": "error",
+					"message": {
+						"text": "Condition \"balance >= 5000\" always evaluates to true",
+						"markdown": "**\\[Line 90\\] Condition \"balance >= 5000\" always evaluates to true**  \n  \n**Start of the path**  \nAccountDuplicate.java&nbsp;(86)&nbsp;:&nbsp;setBalance\\(int balance\\)  \nAccountDuplicate.java&nbsp;(87)&nbsp;:&nbsp;\\_balance = balance;  \nAccountDuplicate.java&nbsp;(88)&nbsp;:&nbsp;if \\(balance < BALANCE\\_GOLD\\_MIN\\) \\{&nbsp;&nbsp;_\\*\\*\\*&nbsp;Condition evaluation: \\(balance < 5000\\) \\(assuming false\\)_  \n**Point where senseless condition is used**&nbsp;  \nAccountDuplicate.java&nbsp;(90)&nbsp;:&nbsp;\\(balance >= BALANCE\\_GOLD\\_MIN\\)"
+					},
+					"partialFingerprints": {
+						"lineHash": "729855832"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+								},
+								"region": {
+									"startLine": 90,
+									"startColumn": 20,
+									"endColumn": 49
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 86,
+														"startColumn": 17,
+														"endColumn": 41
+													}
+												},
+												"message": {
+													"text": "Violation Cause - Start of the path"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 87,
+														"startColumn": 9,
+														"endColumn": 28
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 88,
+														"startColumn": 9,
+														"endColumn": 42
+													}
+												},
+												"message": {
+													"text": "  *** Condition evaluation: (balance < 5000) (assuming false)"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+													},
+													"region": {
+														"startLine": 90,
+														"startColumn": 20,
+														"endColumn": 49
+													}
+												},
+												"message": {
+													"text": "Violation Point - Point where senseless condition is used"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ruleId": "UC.AURCO",
+					"level": "warning",
+					"message": {
+						"text": "'List' field '_accountsLog' is never read",
+						"markdown": "**\\[Line 132\\] 'List' field '\\_accountsLog' is never read**"
+					},
+					"partialFingerprints": {
+						"lineHash": "2040230778"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/AccountDuplicate.java"
+								},
+								"region": {
+									"startLine": 132,
+									"startColumn": 25,
+									"endColumn": 37
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "JDBC.BRSA",
+					"level": "error",
+					"message": {
+						"text": "'0' is not a valid index value for this method call",
+						"markdown": "**\\[Line 86\\] '0' is not a valid index value for this method call**"
+					},
+					"partialFingerprints": {
+						"lineHash": "612379775"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+								},
+								"region": {
+									"startLine": 86,
+									"startColumn": 41,
+									"endColumn": 42
+								}
+							}
+						}
+					]
+				},
+				{
+					"ruleId": "BD.RES.LEAKS",
+					"level": "error",
+					"message": {
+						"text": "JDBC resultset not closed: statement.resultSet(), resultSet",
+						"markdown": "**\\[Line 95\\] JDBC resultset not closed: statement\\.resultSet\\(\\), resultSet**  \n  \nCustomer.java&nbsp;(70)&nbsp;:&nbsp;Connection connection = null;  \nCustomer.java&nbsp;(71)&nbsp;:&nbsp;PreparedStatement statement = null;  \nCustomer.java&nbsp;(72)&nbsp;:&nbsp;ResultSet resultSet = null;  \nCustomer.java&nbsp;(74)&nbsp;:&nbsp;Class\\.forName\\(\"org\\.gjt\\.mm\\.mysql\\.Driver\"\\);  \nCustomer.java&nbsp;(75)&nbsp;:&nbsp;connection = DriverManager\\.getConnection\\(\"bank\", \"bank\", \"system\"\\)  \nCustomer.java&nbsp;(84)&nbsp;:&nbsp;statement = connection\\.prepareStatement\\(\"select \\* from accounts where id=\" \\+ \\_ssn\\)  \n**Point where the resource is allocated**  \nCustomer.java&nbsp;(85)&nbsp;:&nbsp;resultSet = statement\\.executeQuery\\(\\)&nbsp;&nbsp;_\\*\\*\\*&nbsp;Allocated resource variable: statement\\.resultSet\\(\\), resultSet_  \nCustomer.java&nbsp;(86)&nbsp;:&nbsp;\\_name = resultSet\\.getString\\(0\\)&nbsp;&nbsp;_\\*\\*\\*&nbsp;ResultSet\\.getString\\(\\) throws SQLException_  \nCustomer.java&nbsp;(90)&nbsp;:&nbsp;catch \\(SQLException exception\\)  \nCustomer.java&nbsp;(91)&nbsp;:&nbsp;System\\.err\\.println\\(\"Error loading data from database: \" \\+ exception\\.getMessage\\(\\)\\);  \nCustomer.java&nbsp;(92)&nbsp;:&nbsp;return false;  \n**Point where the allocated resource is lost**&nbsp;  \nCustomer.java&nbsp;(95)&nbsp;:&nbsp;\\}&nbsp;&nbsp;_\\*\\*\\*&nbsp;Allocated resource variable: statement\\.resultSet\\(\\), resultSet_"
+					},
+					"partialFingerprints": {
+						"lineHash": "30537853"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+								},
+								"region": {
+									"startLine": 95,
+									"startColumn": 5,
+									"endColumn": 6
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 70,
+														"startColumn": 9,
+														"endColumn": 38
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 71,
+														"startColumn": 9,
+														"endColumn": 44
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 72,
+														"startColumn": 9,
+														"endColumn": 36
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 74,
+														"startColumn": 13,
+														"endColumn": 54
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 75,
+														"startColumn": 13,
+														"endColumn": 79
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 84,
+														"startColumn": 13,
+														"endColumn": 95
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 85,
+														"startColumn": 13,
+														"endColumn": 49
+													}
+												},
+												"message": {
+													"text": "Violation Cause - Point where the resource is allocated  *** Allocated resource variable: statement.resultSet(), resultSet"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 86,
+														"startColumn": 13,
+														"endColumn": 43
+													}
+												},
+												"message": {
+													"text": "  *** ResultSet.getString() throws SQLException"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 90,
+														"startColumn": 11,
+														"endColumn": 42
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 91,
+														"startColumn": 13,
+														"endColumn": 95
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 92,
+														"startColumn": 13,
+														"endColumn": 26
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 95,
+														"startColumn": 5,
+														"endColumn": 6
+													}
+												},
+												"message": {
+													"text": "Violation Point - Point where the allocated resource is lost  *** Allocated resource variable: statement.resultSet(), resultSet"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ruleId": "BD.RES.LEAKS",
+					"level": "error",
+					"message": {
+						"text": "JDBC Connection not closed: connection",
+						"markdown": "**\\[Line 95\\] JDBC Connection not closed: connection**  \n  \nCustomer.java&nbsp;(70)&nbsp;:&nbsp;Connection connection = null;  \nCustomer.java&nbsp;(71)&nbsp;:&nbsp;PreparedStatement statement = null;  \nCustomer.java&nbsp;(72)&nbsp;:&nbsp;ResultSet resultSet = null;  \nCustomer.java&nbsp;(74)&nbsp;:&nbsp;Class\\.forName\\(\"org\\.gjt\\.mm\\.mysql\\.Driver\"\\);  \n**Point where the resource is allocated**  \nCustomer.java&nbsp;(75)&nbsp;:&nbsp;connection = DriverManager\\.getConnection\\(\"bank\", \"bank\", \"system\"\\)&nbsp;&nbsp;_\\*\\*\\*&nbsp;Allocated resource variable: connection_  \nCustomer.java&nbsp;(84)&nbsp;:&nbsp;statement = connection\\.prepareStatement\\(\"select \\* from accounts where id=\" \\+ \\_ssn\\)&nbsp;&nbsp;_\\*\\*\\*&nbsp;Connection\\.prepareStatement\\(\\) throws SQLException_  \nCustomer.java&nbsp;(90)&nbsp;:&nbsp;catch \\(SQLException exception\\)  \nCustomer.java&nbsp;(91)&nbsp;:&nbsp;System\\.err\\.println\\(\"Error loading data from database: \" \\+ exception\\.getMessage\\(\\)\\);  \nCustomer.java&nbsp;(92)&nbsp;:&nbsp;return false;  \n**Point where the allocated resource is lost**&nbsp;  \nCustomer.java&nbsp;(95)&nbsp;:&nbsp;\\}&nbsp;&nbsp;_\\*\\*\\*&nbsp;Allocated resource variable: connection_"
+					},
+					"partialFingerprints": {
+						"lineHash": "30537853"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+								},
+								"region": {
+									"startLine": 95,
+									"startColumn": 5,
+									"endColumn": 6
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 70,
+														"startColumn": 9,
+														"endColumn": 38
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 71,
+														"startColumn": 9,
+														"endColumn": 44
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 72,
+														"startColumn": 9,
+														"endColumn": 36
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 74,
+														"startColumn": 13,
+														"endColumn": 54
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 75,
+														"startColumn": 13,
+														"endColumn": 79
+													}
+												},
+												"message": {
+													"text": "Violation Cause - Point where the resource is allocated  *** Allocated resource variable: connection"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 84,
+														"startColumn": 13,
+														"endColumn": 95
+													}
+												},
+												"message": {
+													"text": "  *** Connection.prepareStatement() throws SQLException"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 90,
+														"startColumn": 11,
+														"endColumn": 42
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 91,
+														"startColumn": 13,
+														"endColumn": 95
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 92,
+														"startColumn": 13,
+														"endColumn": 26
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 95,
+														"startColumn": 5,
+														"endColumn": 6
+													}
+												},
+												"message": {
+													"text": "Violation Point - Point where the allocated resource is lost  *** Allocated resource variable: connection"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"ruleId": "BD.RES.LEAKS",
+					"level": "error",
+					"message": {
+						"text": "JDBC statement not closed: statement",
+						"markdown": "**\\[Line 95\\] JDBC statement not closed: statement**  \n  \nCustomer.java&nbsp;(70)&nbsp;:&nbsp;Connection connection = null;  \nCustomer.java&nbsp;(71)&nbsp;:&nbsp;PreparedStatement statement = null;  \nCustomer.java&nbsp;(72)&nbsp;:&nbsp;ResultSet resultSet = null;  \nCustomer.java&nbsp;(74)&nbsp;:&nbsp;Class\\.forName\\(\"org\\.gjt\\.mm\\.mysql\\.Driver\"\\);  \nCustomer.java&nbsp;(75)&nbsp;:&nbsp;connection = DriverManager\\.getConnection\\(\"bank\", \"bank\", \"system\"\\)  \n**Point where the resource is allocated**  \nCustomer.java&nbsp;(84)&nbsp;:&nbsp;statement = connection\\.prepareStatement\\(\"select \\* from accounts where id=\" \\+ \\_ssn\\)&nbsp;&nbsp;_\\*\\*\\*&nbsp;Allocated resource variable: statement_  \nCustomer.java&nbsp;(85)&nbsp;:&nbsp;resultSet = statement\\.executeQuery\\(\\)&nbsp;&nbsp;_\\*\\*\\*&nbsp;PreparedStatement\\.executeQuery\\(\\) throws SQLException_  \nCustomer.java&nbsp;(90)&nbsp;:&nbsp;catch \\(SQLException exception\\)  \nCustomer.java&nbsp;(91)&nbsp;:&nbsp;System\\.err\\.println\\(\"Error loading data from database: \" \\+ exception\\.getMessage\\(\\)\\);  \nCustomer.java&nbsp;(92)&nbsp;:&nbsp;return false;  \n**Point where the allocated resource is lost**&nbsp;  \nCustomer.java&nbsp;(95)&nbsp;:&nbsp;\\}&nbsp;&nbsp;_\\*\\*\\*&nbsp;Allocated resource variable: statement_"
+					},
+					"partialFingerprints": {
+						"lineHash": "30537853"
+					},
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+								},
+								"region": {
+									"startLine": 95,
+									"startColumn": 5,
+									"endColumn": 6
+								}
+							}
+						}
+					],
+					"codeFlows": [
+						{
+							"threadFlows": [
+								{
+									"locations": [
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 70,
+														"startColumn": 9,
+														"endColumn": 38
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 71,
+														"startColumn": 9,
+														"endColumn": 44
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 72,
+														"startColumn": 9,
+														"endColumn": 36
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 74,
+														"startColumn": 13,
+														"endColumn": 54
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 75,
+														"startColumn": 13,
+														"endColumn": 79
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 84,
+														"startColumn": 13,
+														"endColumn": 95
+													}
+												},
+												"message": {
+													"text": "Violation Cause - Point where the resource is allocated  *** Allocated resource variable: statement"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 85,
+														"startColumn": 13,
+														"endColumn": 49
+													}
+												},
+												"message": {
+													"text": "  *** PreparedStatement.executeQuery() throws SQLException"
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 90,
+														"startColumn": 11,
+														"endColumn": 42
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 91,
+														"startColumn": 13,
+														"endColumn": 95
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 92,
+														"startColumn": 13,
+														"endColumn": 26
+													}
+												}
+											},
+											"nestingLevel": 0
+										},
+										{
+											"location": {
+												"physicalLocation": {
+													"artifactLocation": {
+														"uri": "file://xtest11/home/modtest/actions-runner/_work/workflow-integration-examples/workflow-integration-examples/jtest-demo/src/main/java/examples/nbank/Customer.java"
+													},
+													"region": {
+														"startLine": 95,
+														"startColumn": 5,
+														"endColumn": 6
+													}
+												},
+												"message": {
+													"text": "Violation Point - Point where the allocated resource is lost  *** Allocated resource variable: statement"
+												}
+											},
+											"nestingLevel": 0
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
