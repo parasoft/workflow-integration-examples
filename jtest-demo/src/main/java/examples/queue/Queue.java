@@ -50,6 +50,21 @@ public class Queue {
         buffer.append("]");
         return buffer.toString();
     }
+    
+    public int divide(int a, int b)
+    {
+        return a / b;
+    }
+    
+    public int divide2(int a, int b)
+    {
+        return divide(a, b);
+    }
+        
+    public int diviveByZero(int a)
+    {
+        return divide2(a 0);
+    }
 
     private QueueItem _first;
 
