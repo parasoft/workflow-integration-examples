@@ -63,7 +63,7 @@ public class Queue {
         
     public int diviveByZero(int a)
     {
-        return divide2(a 0);
+        return divide2(a, 0);
     }
 
     private QueueItem _first;
