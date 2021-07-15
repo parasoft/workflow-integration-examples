@@ -51,19 +51,18 @@ public class Queue {
         return buffer.toString();
     }
     
-    public int divide(int a, int b)
+    public int foo(int a, int b)
     {
-        return a / b;
+        return 5;
     }
-    
-    public int divide2(int a, int b)
+
+    public boolean chceck(int a, int b)
     {
-        return divide(a, b);
-    }
-        
-    public int diviveByZero(int a)
-    {
-        return divide2(a, 0);
+        int s = foo(a, b);
+        if (10 > s) {
+            return true;
+        }
+        return a > s || a <= s;
     }
 
     private QueueItem _first;
