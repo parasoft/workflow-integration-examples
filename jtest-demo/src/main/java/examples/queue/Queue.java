@@ -43,7 +43,7 @@ public class Queue {
     public String toString() {
         StringBuffer buffer = new StringBuffer("Queue[");
         for (QueueItem next = _first; next != null; next = next.getNext()) {
-            if (next != _first)
+            if (next != _first) // parasoft-suppress PB.CUB.UEIC "Reviewed, this is intentionally"
                 buffer.append(",");
             buffer.append(next.getItem());
         }
